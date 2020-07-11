@@ -62,7 +62,6 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[] = { "chromium", NULL };
-//static const char *rofi[] = { "rofi", "-combi-modi", "window,drun","-show","combi","-modi","combi", NULL };
 static const char *rofi[] = { "rofi", "-show", "drun", NULL};
 static const char *vimwiki[] = { "alacritty", "-e", "nvim","-c","VimwikiIndex", NULL};
 
@@ -106,6 +105,7 @@ static Key keys[] = {
 	{ 0,          XF86XK_MonBrightnessUp,     spawn,       SHCMD("xbacklight -inc 15") },
 	{ 0,        XF86XK_MonBrightnessDown,     spawn,       SHCMD("xbacklight -dec 15") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_x,      spawn,           SHCMD("prompt 'Shutdown Computer?' 'poweroff'") },
 };
 
 /* button definitions */
