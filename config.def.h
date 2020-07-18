@@ -108,6 +108,8 @@ static Key keys[] = {
 	{ MODKEY,             XK_Scroll_Lock,     spawn,       SHCMD("killall screenkey || screenkey &") },
 	{ 0,          XF86XK_MonBrightnessUp,     spawn,       SHCMD("xbacklight -inc 15") },
 	{ 0,        XF86XK_MonBrightnessDown,     spawn,       SHCMD("xbacklight -dec 15") },
+	{ 0,        XF86XK_AudioLowerVolume,     spawn,       SHCMD("amixer -D pulse sset Master 5%-") },
+	{ 0,        XF86XK_AudioRaiseVolume,     spawn,       SHCMD("amixer -D pulse sset Master 5%+") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,             XK_x,      spawn,           SHCMD("prompt 'Shutdown Computer?' 'poweroff'") },
 };
