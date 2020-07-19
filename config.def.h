@@ -30,9 +30,12 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     switchtotag    isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            0,             1,           -1 },
-	{ "firefox",  NULL,       NULL,       1 << 8,       1,             0,           -1 },
+    /* class         instance    title       tags mask     switchtotag    isfloating   monitor */
+    { "Gimp",        NULL,       NULL,       1 << 8,       1,             1,           -1 },
+    { "firefox",     NULL,       NULL,       1 << 7,       1,             0,           -1 },
+    { "qutebrowser", NULL,       NULL,       1 << 6,       1,             0,           -1 },
+    { "Chromium",    NULL,       NULL,       1 << 5,       1,             0,           -1 },
+    { "code",        NULL,       NULL,       1 << 4,       1,             0,           -1 },
 };
 
 /* layout(s) */
@@ -99,6 +102,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      setlayout,      {.v = &layouts[3]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY,                       XK_s,      togglesticky,   {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
